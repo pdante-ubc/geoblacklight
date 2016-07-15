@@ -21,7 +21,6 @@ module Geoblacklight
   require 'geoblacklight/metadata'
   require 'geoblacklight/reference'
   require 'geoblacklight/references'
-  require 'geoblacklight/search_builder'
 
   def self.inject!
     CatalogController.send(:include, Geoblacklight::ControllerOverride)
