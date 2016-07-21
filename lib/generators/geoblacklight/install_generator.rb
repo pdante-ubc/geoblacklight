@@ -11,14 +11,28 @@ module Geoblacklight
 
     desc 'Install Geoblacklight'
 
+    def mount_geoblacklight_engine
+      route "mount Geoblacklight::Engine => 'geoblacklight'"
+    end
+
     def inject_geoblacklight_routes
       route <<-EOF.strip_heredoc
-          post 'wms/handle'
-          resources :download, only: [:show, :file]
-          get 'download/file/:id' => 'download#file', as: :download_file
-          get 'download/hgl/:id' => 'download#hgl', as: :download_hgl
-          get 'catalog/:id/web_services' => 'catalog#web_services', as: 'web_services_solr_document'
-          get 'catalog/:id/metadata' => 'catalog#metadata', as: 'metadata_solr_document'
+          concern :gbl_exportable, Geoblacklight::Routes::Exportable.new
+          resources :solr_documents, only: [:show], controller: 'catalog' do
+            concerns :gbl_exportable
+          end
+
+          concern :gbl_wms, Geoblacklight::Routes::Wms.new
+          namespace :wms do
+            concerns :gbl_wms
+          end
+
+          concern :gbl_downloadable, Geoblacklight::Routes::Downloadable.new
+          namespace :download do
+            concerns :gbl_downloadable
+          end
+
+          resources :download, only: [:show]
       EOF
     end
 
