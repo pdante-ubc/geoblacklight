@@ -3,4 +3,4 @@
 collection:
   dir: solr/conf/
   name: blacklight-core
- 
+  extra_lib_directory: solr/ext

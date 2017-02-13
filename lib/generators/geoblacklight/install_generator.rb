@@ -49,6 +49,13 @@ module Geoblacklight
       directory '../../../../solr', 'solr'
     end
 
+    def download_jts
+      FileUtils.mkdir_p('solr/ext')
+      SolrWrapper::Downloader.fetch_with_progressbar(
+        'http://central.maven.org/maven2/com/vividsolutions/jts-core/1.14.0/jts-core-1.14.0.jar',
+        'solr/ext/jts-core-1.14.0.jar')
+    end
+
     def include_geoblacklight_solrdocument
       inject_into_file 'app/models/solr_document.rb', after: 'include Blacklight::Solr::Document' do
         "\n include Geoblacklight::SolrDocument"
