@@ -1,28 +1,50 @@
 {
-  "geoblacklight_version": "1.0",
+  "geoblacklight_version": "2.0",
   "dc_identifier_s": "http://purl.stanford.edu/cz128vq0535",
   "dc_title_s": "2005 Rural Poverty GIS Database: Uganda",
   "dc_description_s": "This polygon shapefile contains 2005 poverty data for 855 rural subcounties in Uganda. These data are intended for researchers, students, policy makers and the general public for reference and mapping purposes, and may be used for basic applications such as viewing, querying, and map output production.",
-  "dc_rights_s": "Public",
+  "dc_rights_s": "http://rightsstatements.org/vocab/NoC-OKLR/1.0/",
+  "dc_rights_holder_sm": [
+    "Stanford University"
+  ],
+  "dc_visibility_s": "Public",
   "dct_provenance_s": "Stanford",
-  "dct_references_s": "{\"http://schema.org/url\":\"http://purl.stanford.edu/cz128vq0535\",\"http://schema.org/downloadUrl\":\"http://stacks.stanford.edu/file/druid:cz128vq0535/data.zip\",\"http://www.loc.gov/mods/v3\":\"http://purl.stanford.edu/cz128vq0535.mods\",\"http://www.isotc211.org/schemas/2005/gmd/\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:cz128vq0535/iso19139.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:cz128vq0535/default.html\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geowebservices.stanford.edu/geoserver/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geowebservices.stanford.edu/geoserver/wms\"}",
-  "layer_id_s": "druid:cz128vq0535",
+  "dcat_distribution_sm": [
+    "{\"downloadURL\":\"http://stacks.stanford.edu/file/druid:cz128vq0535/data.zip\",\"format\":[\"Shapefile\"],\"mediaType\":\"application/zip\",\"title\":\"Shapefile\"}",
+    "{\"conformsTo\":\"http://www.loc.gov/mods/v3\",\"downloadURL\":\"http://purl.stanford.edu/cz128vq0535.mods\",\"format\":[\"MODS\"],\"mediaType\":\"application/mods+xml\",\"title\":\"MODS Metadata\"}",
+    "{\"conformsTo\":\"http://www.isotc211.org/schemas/2005/gmd/\",\"downloadURL\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:cz128vq0535/iso19139.xml\",\"format\":[\"ISO19139\"],\"mediaType\":\"application/xml\",\"title\":\"ISO 19139 Metadata\"}",
+    "{\"conformsTo\":\"http://www.w3.org/1999/xhtml\",\"downloadURL\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:cz128vq0535/default.html\",\"format\":[\"HTML\"],\"mediaType\":\"application/html\",\"title\":\"HTML Metadata\"}",
+    "{\"accessURL\":\"https://geowebservices.stanford.edu/geoserver/wfs\",\"conformsTo\":\"http://www.opengis.net/def/serviceType/ogc/wfs\",\"format\":[\"Shapefile\",\"GeoJSON\"],\"layerId\":\"druid:cz128vq0535\"}",
+    "{\"accessURL\":\"https://geowebservices.stanford.edu/geoserver/wms\",\"conformsTo\":\"http://www.opengis.net/def/serviceType/ogc/wms\",\"format\":[\"KMZ\"],\"layerId\":\"druid:cz128vq0535\"}"
+  ],
   "layer_slug_s": "stanford-cz128vq0535",
   "layer_geom_type_s": "Polygon",
-  "layer_modified_dt": "2015-04-16T23:02:57Z",
-  "dc_format_s": "Shapefile",
-  "dc_language_s": "English",
+  "layer_modified_dt": "2015-01-13T18:46:38Z",
+  "dc_format_sm": [
+    "Shapefile",
+    "GeoJSON",
+    "KMZ"
+  ],
+  "dc_language_sm": [
+    "eng"
+  ],
   "dc_type_s": "Dataset",
   "dc_publisher_s": "Uganda Bureau of Statistics",
-  "dc_creator_sm": "Uganda Bureau of Statistics",
+  "dc_creator_sm": [
+    "Uganda Bureau of Statistics"
+  ],
   "dc_subject_sm": [
     "Poverty",
     "Statistics"
   ],
   "dct_issued_s": "2005",
-  "dct_temporal_sm": "2005",
-  "dct_spatial_sm": "Uganda",
+  "dct_temporal_sm": [
+    "2005"
+  ],
+  "dct_spatial_sm": [
+    "Uganda"
+  ],
   "solr_geom": "ENVELOPE(29.572742, 35.000308, 4.234077, -1.478794)",
   "solr_year_i": 2005,
-  "stanford_rights_metadata_s": "<?xml version=\"1.0\"?>\n<rightsMetadata>\n  <access type=\"discover\">\n    <machine>\n      <world/>\n    </machine>\n  </access>\n  <access type=\"read\">\n    <machine>\n      <world/>\n    </machine>\n  </access>\n  <use>\n    <human type=\"useAndReproduction\">This item is in the public domain.  There are no restrictions on use.</human>\n    <human type=\"creativeCommons\"/>\n    <machine type=\"creativeCommons\"/>\n  </use>\n  <copyright>\n    <human>This work is in the Public Domain, meaning that it is not subject to copyright.</human>\n  </copyright>\n</rightsMetadata>\n"
+  "dcat_landing_page_s": "http://purl.stanford.edu/cz128vq0535"
 }
