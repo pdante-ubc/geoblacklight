@@ -31,6 +31,10 @@ module Geoblacklight
       References.new(self)
     end
 
+    def distributions
+      Distributions.new(self)
+    end
+
     def direct_download
       references.download.to_hash unless references.download.blank?
     end
@@ -52,7 +56,7 @@ module Geoblacklight
     end
 
     def item_viewer
-      ItemViewer.new(references)
+      ItemViewer.new(distributions)
     end
 
     def itemtype
@@ -74,7 +78,9 @@ module Geoblacklight
     end
 
     def wxs_identifier
-      fetch(Settings.FIELDS.WXS_IDENTIFIER, '')
+      protocol =  item_viewer.viewer_protocol
+      ref = item_viewer.send("#{protocol}")
+      ref.layer_id
     end
 
     def file_format

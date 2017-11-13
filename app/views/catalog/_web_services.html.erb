@@ -1,6 +1,6 @@
 <% document ||= @document %>
 
-<% document.references.refs.each do |reference| %>
+<% document.distributions.service_distributions.each do |reference| %>
   <% if Settings.WEBSERVICES_SHOWN.include? reference.type.to_s %>
     <%= render_web_services(reference) %>
     <hr>

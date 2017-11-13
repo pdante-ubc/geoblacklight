@@ -18,12 +18,11 @@ FIELDS:
   :FILE_FORMAT: 'dc_format_s'
   :GEOMETRY: 'solr_geom'
   :WXS_IDENTIFIER: 'layer_id_s'
-  :RIGHTS: 'dc_rights_s'
+  :RIGHTS: 'dc_visibility_s'
   :PROVENANCE: 'dct_provenance_s'
   :GEOM_TYPE: 'layer_geom_type_s'
   :SPATIAL_COVERAGE: 'dct_spatial_sm'
   :SUBJECT: 'dc_subject_sm'
-  :REFERENCES: 'dct_references_s'
   :YEAR: 'solr_year_i'
   :CREATOR: 'dc_creator_sm'
   :DESCRIPTION: 'dc_description_s'
@@ -32,6 +31,8 @@ FIELDS:
   :TEMPORAL: 'dct_temporal_sm'
   :TITLE: 'dc_title_s'
   :SOURCE: 'dc_source_sm'
+  :DISTRIBUTIONS: 'dcat_distribution_sm'
+  :LANDING_PAGE: 'dcat_landing_page_s'
 
 # Institution deployed at
 INSTITUTION: 'Stanford'

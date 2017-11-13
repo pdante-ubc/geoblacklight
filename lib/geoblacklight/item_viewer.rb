@@ -1,7 +1,7 @@
 module Geoblacklight
   class ItemViewer
-    def initialize(references)
-      @references = references
+    def initialize(distributions)
+      @distributions = distributions
     end
 
     def viewer_protocol
@@ -15,27 +15,27 @@ module Geoblacklight
     end
 
     def wms
-      @references.wms
+      @distributions.wms
     end
 
     def iiif
-      @references.iiif
+      @distributions.iiif
     end
 
     def tiled_map_layer
-      @references.tiled_map_layer
+      @distributions.tiled_map_layer
     end
 
     def dynamic_map_layer
-      @references.dynamic_map_layer
+      @distributions.dynamic_map_layer
     end
 
     def feature_layer
-      @references.feature_layer
+      @distributions.feature_layer
     end
 
     def image_map_layer
-      @references.image_map_layer
+      @distributions.image_map_layer
     end
 
     def viewer_preference

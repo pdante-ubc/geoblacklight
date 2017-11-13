@@ -1,8 +1,8 @@
-module Geoblacklight
+  module Geoblacklight
   # References is a geoblacklight-schema dct:references parser
   class References
     attr_reader :refs, :reference_field
-    def initialize(document, reference_field = Settings.FIELDS.REFERENCES)
+      def initialize(document, reference_field = Settings.FIELDS.REFERENCES)
       @document = document
       @reference_field = reference_field
       @refs = parse_references.map { |ref| Reference.new(ref) }
