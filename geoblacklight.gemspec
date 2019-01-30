@@ -26,7 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'faraday'
   spec.add_dependency 'faraday_middleware'
   spec.add_dependency 'coderay'
-  spec.add_dependency 'geoblacklight-icons', '>= 0.2'
   spec.add_dependency 'deprecation'
   spec.add_dependency 'geo_combine', '~> 0.4'
   spec.add_dependency 'mime-types'

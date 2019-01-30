@@ -1,8 +1,45 @@
 // Additional customizations beyond generated FontCustom styles
+.blacklight-icons {
+  display: inline;
+  align-self: center;
+  color:#777777;
+}
 
-.geoblacklight-icon {
-  color: $gray-600;
-  font-size: 1.2em;
+.blacklight-icons svg {
+  height: 1em;
+  width: 1em;
+}
+
+.blacklight-icons {
+  svg {
+    fill: currentColor;
+  }
+}
+
+
+.blacklight-icons.baseline svg {
+  top: .125em;
+  position: relative;
+}
+
+.blacklight-catalog-index {
+  .category-icon {
+    .blacklight-icons {
+      height: unset;
+      width: unset;
+      font-size:1em;
+      svg {
+        height:6em;
+        width:6em;
+      }
+    }
+  }
+}
+
+.facet-label {
+  .blacklight-icons {
+    margin-right:1rem;
+  }
 }
 
 .geoblacklight-stanford {

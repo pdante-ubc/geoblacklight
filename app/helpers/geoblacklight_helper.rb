@@ -202,7 +202,7 @@ module GeoblacklightHelper
   def render_facet_item_with_icon(field_name, item)
     doc = Nokogiri::HTML.fragment(render_facet_item(field_name, item))
     doc.at_css('.facet-label').children.first
-       .add_previous_sibling(geoblacklight_icon(item.value))
+       .add_previous_sibling(blacklight_icon(item.value.parameterize))
     doc.to_html.html_safe
   end
 

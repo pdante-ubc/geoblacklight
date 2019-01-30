@@ -1,3 +1,3 @@
-<%= geoblacklight_icon(document[Settings.FIELDS.GEOM_TYPE]) %>
-<%= geoblacklight_icon(document[Settings.FIELDS.PROVENANCE]) %>
-<%= geoblacklight_icon(document[Settings.FIELDS.RIGHTS]) %>
+<%= blacklight_icon(document[Settings.FIELDS.GEOM_TYPE].parameterize) %>
+<%= blacklight_icon(document[Settings.FIELDS.PROVENANCE].parameterize) %>
+<%= blacklight_icon(document[Settings.FIELDS.RIGHTS].parameterize) %>
