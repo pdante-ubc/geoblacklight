@@ -1,0 +1,25 @@
+name: geoblacklight
+services:
+  geoblacklight_test_solr:
+    type: solr:custom
+    overrides:
+      image: geoblacklightsolr:8.9-v1.0.0
+      command: server/scripts/lando-start.sh
+    portforward: true
+    core: geoblacklight-core-test
+    config:
+      dir: "solr/conf"
+  geoblacklight_development_solr:
+    type: solr:custom
+    overrides:
+      image: geoblacklightsolr:8.9-v1.0.0
+      command: server/scripts/lando-start.sh
+    portforward: true
+    core: geoblacklight-core-dev
+    config:
+      dir: "solr/conf"
+proxy:
+  geoblacklight_test_solr:
+    - geoblacklight.test.solr.lndo.site:8983
+  geoblacklight_development_solr:
+    - geoblacklight.dev.solr.lndo.site:8983
