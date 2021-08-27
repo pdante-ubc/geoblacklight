@@ -64,8 +64,17 @@ namespace :geoblacklight do
     end
   end
 
+  desc 'Stdout output asset paths'
+  task :asset_paths do
+    within_test_app do
+      system 'bundle exec rake geoblacklight:application_asset_paths'
+    end
+  end
+end
+
+namespace :server do
   desc 'Run GeoBlacklight for interactive development'
-  task :server, [:rails_server_args] do |_t, args|
+  task :start, [:rails_server_args] do |_t, args|
     if File.exist? EngineCart.destination
       within_test_app do
         system 'bundle update'
@@ -82,9 +91,11 @@ namespace :geoblacklight do
       end
     end
   end
+end
 
+namespace :solr do
   desc 'Run Solr and seed with sample data'
-  task :solr do
+  task :start do
     if File.exist? EngineCart.destination
       within_test_app do
         system 'bundle update'
@@ -97,11 +108,9 @@ namespace :geoblacklight do
     Rake::Task['geoblacklight:internal:seed'].invoke
   end
 
-  desc 'Stdout output asset paths'
-  task :asset_paths do
-    within_test_app do
-      system 'bundle exec rake geoblacklight:application_asset_paths'
-    end
+  desc 'Stop Solr'
+  task :stop do
+    system('lando stop')
   end
 end
 

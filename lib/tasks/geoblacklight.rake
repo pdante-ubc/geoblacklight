@@ -4,24 +4,16 @@ require 'generators/geoblacklight/install_generator'
 require_relative '../../config/lando_env'
 
 namespace :geoblacklight do
-  desc 'Run GeoBlacklight for interactive development'
-  task :server, [:rails_server_args] do |_t, args|
-    begin
-      Rake::Task['geoblacklight:solr:seed'].invoke
-      system "bundle exec rails s #{args[:rails_server_args]}"
-    rescue Interrupt
-      puts 'Shutting down...'
-    end
-  end
-
-  namespace :index do
+  namespace :solr do
     desc 'Put sample data into solr'
     task :seed => :environment do
       docs = Dir['spec/fixtures/solr_documents/*.json'].map { |f| JSON.parse File.read(f) }.flatten
       Blacklight.default_index.connection.add docs
       Blacklight.default_index.connection.commit
     end
+  end
 
+  namespace :index do
     desc 'Ingests a GeoHydra transformed.json'
     task :ingest_all => :environment do
       docs = JSON.parse(File.read(Rails.root.join('tmp', 'transformed.json')))
@@ -75,15 +67,20 @@ namespace :geoblacklight do
     end
   end
 
-  namespace :solr do
-    desc 'Put sample data into solr'
-    task :seed => :environment do
-      Rake::Task['geoblacklight:index:seed'].invoke
-    end
-  end
-
   desc 'Stdout output asset paths'
   task application_asset_paths: [:environment] do
     puts Rails.application.config.assets.paths
+  end
+end
+
+namespace :server do
+  desc 'Run GeoBlacklight for interactive development'
+  task :start, [:rails_server_args] do |_t, args|
+    begin
+      Rake::Task['geoblacklight:solr:seed'].invoke
+      system "bundle exec rails s #{args[:rails_server_args]}"
+    rescue Interrupt
+      puts 'Shutting down...'
+    end
   end
 end
