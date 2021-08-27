@@ -1,0 +1,10 @@
+load_defaults: __VERSION__
+development:
+  adapter: solr
+  url: <%= ENV['SOLR_URL'] || "http://#{ENV['lando_geoblacklight_development_solr_conn_host'] || '127.0.0.1'}:#{ENV['lando_geoblacklight_development_solr_conn_port'] || 8983}/solr/geoblacklight-core-dev" %>
+test: &test
+  adapter: solr
+  url: <%= ENV['SOLR_URL'] || "http://#{ENV['lando_geoblacklight_test_solr_conn_host'] || '127.0.0.1'}:#{ENV['SOLR_TEST_PORT'] || ENV['lando_geoblacklight_test_solr_conn_port'] || 8984}/solr/geoblacklight-core-test" %>
+production:
+  adapter: solr
+  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/geoblacklight-core" %>

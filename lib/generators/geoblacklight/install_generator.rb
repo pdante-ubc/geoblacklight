@@ -40,6 +40,20 @@ module Geoblacklight
       copy_file 'catalog_controller.rb', 'app/controllers/catalog_controller.rb'
     end
 
+    def create_blacklight_configuration
+      remove_file 'config/blacklight.yml'
+      copy_file 'config/blacklight.yml', 'config/blacklight.yml'
+      gsub_file 'config/blacklight.yml', '__VERSION__', Blacklight::VERSION
+    end
+
+    def create_lando_configuration
+      copy_file '.lando.yml', '.lando.yml'
+      copy_file 'config/lando_env.rb', 'config/lando_env.rb'
+      insert_into_file 'config/application.rb', after: 'require "rails"' do
+        "\nrequire_relative 'lando_env'"
+      end
+    end
+
     def rails_config
       copy_file 'settings.yml', 'config/settings.yml'
     end
