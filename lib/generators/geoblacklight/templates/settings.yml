@@ -32,7 +32,6 @@ FIELDS:
   :LAYER_MODIFIED: 'gbl_mdModified_dt'
   :MEMBER_OF: 'pcdm_memberOf_sm'
   :OVERLAP_FIELD: 'solr_bboxtype'
-  :PART_OF: 'dct_isPartOf_sm'
   :PUBLISHER: 'dct_publisher_sm'
   :PROVENANCE: 'schema_provider_s'
   :REFERENCES: 'dct_references_s'
